@@ -1,7 +1,7 @@
 {
     "name": "PureProject Helper",
     "version": "2.0",
-    "description": "Build an Extension!",
+    "description": "Helper for PureProject",
     "permissions": ["declarativeContent", "storage", "activeTab", "tabs"],
     "background": {
         "scripts": ["background.js"],
