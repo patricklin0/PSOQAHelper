@@ -2,13 +2,12 @@
     "name": "PureProject Helper",
     "version": "1.0",
     "description": "Build an Extension!",
-    "permissions": ["declarativeContent", "storage", "activeTab"],
+    "permissions": ["declarativeContent", "storage", "activeTab", "tabs"],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
     "page_action": {
-        "default_popup": "popup.html",
         "default_icon": {
             "128": "images/genesys.png"
         }
