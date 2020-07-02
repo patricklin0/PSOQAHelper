@@ -1,5 +1,6 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	let url = tab.url
+	// URL matches https://project.genesys.com/.../qualityassurance
 	if(url.substring(0, 27) === 'https://project.genesys.com' &&
 		url.substring(url.length - 16, url.length) == 'qualityassurance') {
 		console.log('sending message')

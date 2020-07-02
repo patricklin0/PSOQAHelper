@@ -1,6 +1,6 @@
 {
     "name": "PureProject Helper",
-    "version": "1.0",
+    "version": "2.0",
     "description": "Build an Extension!",
     "permissions": ["declarativeContent", "storage", "activeTab", "tabs"],
     "background": {
