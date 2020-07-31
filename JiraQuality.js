@@ -84,13 +84,29 @@ function parseAndDownload(dom) {
                         var finalResults = ''
                         for(let l = 0; l < stepList.length; l++) {
                             if(stepList[l].nodeName === '#text') continue
-                            let step = stepList[l].childNodes[3].innerHTML
+                            let step = ''
+                            step = stepList[l].childNodes[3].innerHTML
                             step = step.substring(11, step.length - 6)
-                            finalSteps += '>> ' + step + '\n'
                             
-                            let result = stepList[l].childNodes[7].innerHTML
+                            let result = ''
+                            result = stepList[l].childNodes[7].innerHTML
                             result = result.substring(11, result.length - 6)
-                            finalResults += '>> ' + result + '\n'
+
+                            if(l + 2 >= stepList.length) {
+                                if(allSpaces(result) || result == '') {
+                                    finalResults += '>> ' + step + '\n'
+                                } else {
+                                    finalSteps += '>> ' + step + '\n'
+                                    finalResults += '>> ' + result + '\n'
+                                }
+                            } else {
+                                if(!(allSpaces(step) || step == '')) {
+                                    finalSteps += '>> ' + step + '\n'
+                                }
+                                if(!(allSpaces(result) || result == '')) {
+                                    finalSteps += '>> ' + result + '\n'
+                                }
+                            }
                         }
                         row.push(finalSteps)
                         row.push(finalResults)
@@ -112,4 +128,11 @@ function removeTags(str) {
     else
     str = str.toString();
     return str.replace( /(<([^>]+)>)/ig, '');
+ }
+
+ function allSpaces(input) {
+     for(var i = 0; i < input.length; i++) {
+        if(input.charAt(i) !== ' ') return false
+     }
+     return true
  }
