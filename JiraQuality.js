@@ -58,7 +58,7 @@ function parseAndDownload(dom) {
     if(title === '' || title == null) title = 'Default'
     var row = []
     var data = []
-    data.push(['Title','Objective','Data','Steps','Expected Results'])
+    data.push(['Scenario','Objective','Data','Steps','Expected Results','Run Priority','Component'])
 
     for(let i = issuesList.length - 1; i >= 0; i--) {
         let currentIssue = issuesList[i]
@@ -110,6 +110,8 @@ function parseAndDownload(dom) {
                         }
                         row.push(finalSteps)
                         row.push(finalResults)
+                        row.push('')
+                        row.push('')
                         data.push(row)
                     }
                 }
