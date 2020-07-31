@@ -1,6 +1,6 @@
 {
-    "name": "PureProject Helper",
-    "version": "2.0",
+    "name": "PSO QA Helper",
+    "version": "3.0",
     "description": "Helper for PureProject",
     "permissions": ["declarativeContent", "storage", "activeTab", "tabs"],
     "background": {
@@ -18,8 +18,12 @@
     "manifest_version": 2,
     "content_scripts": [
         {
-          "matches": ["https://project.genesys.com/*"],
-          "js": ["quality.js"]
+            "matches": ["https://project.genesys.com/*"],
+            "js": ["PPQuality.js"]
+        },
+        {
+            "matches": ["https://jira.genesys.com/*"],
+            "js": ["JiraQuality.js", "xlsx.full.min.js"]
         }
     ]
 }

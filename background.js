@@ -5,7 +5,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		url.substring(url.length - 16, url.length) == 'qualityassurance') {
 		console.log('sending message')
 		chrome.tabs.sendMessage(tab.id, {'message': 'reachQuality'})
-			//chrome.tabs.sendMessage(activeTab.id, {"message": "test"});
+		//chrome.tabs.sendMessage(activeTab.id, {"message": "test"});
+	} else if(url.includes('jira.genesys.com/browse')) {
+		chrome.tabs.sendMessage(tab.id, {'message': 'reachJIRA'})
 	} else {
 		chrome.tabs.sendMessage(tab.id, {'message': 'leaveQuality'})
 	}
