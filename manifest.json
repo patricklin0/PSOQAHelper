@@ -1,6 +1,6 @@
 {
     "name": "PSO QA Helper",
-    "version": "3.1",
+    "version": "3.5",
     "description": "Helper for PureProject",
     "permissions": ["declarativeContent", "storage", "activeTab", "tabs"],
     "background": {
