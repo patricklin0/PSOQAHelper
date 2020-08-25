@@ -150,16 +150,16 @@ function parseAndDownload(dom) {
 
 function removeTags(str) {
     if ((str===null) || (str===''))
-    return false;
+    return false
     else
-    str = str.toString();
-    return str.replace( /(<([^>]+)>)/ig, '');
+    str = str.toString()
+    return str.replace( /(<([^>]+)>)/ig, '')
 }
 
 function removeSymbols(str) {
     let gt = '&gt;'
     let lt = '&lt;'
-    if ((str===null) || (str==='')) return false;
+    if ((str===null) || (str==='')) return ''
 
     str = str.toString()
     str = str.replace(gt, '>')
